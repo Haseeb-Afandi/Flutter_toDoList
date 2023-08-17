@@ -11,22 +11,27 @@ class _CounterViewState extends State<CounterView> {
   int counter = 0;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        leading: const Text("Test"),
+        titleTextStyle: const TextStyle(fontSize: 40),
+      ),
       body: SafeArea(
           child: Column(
         children: [
           Text(
-            "Value =",
+            "Value = $counter",
             style: const TextStyle(fontSize: 40),
           ),
-          // ElevatedButton(
-          //   onPressed: () {
-          //     setState(() {
-          //       counter++;
-          //     });
-          //   },
-          //   child: const Text("Add Value"),
-          // )
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                counter++;
+              });
+            },
+            child: const Text("Add Value"),
+          )
         ],
       )),
     );
